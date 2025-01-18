@@ -1,0 +1,29 @@
+{
+    "version": "1.0",
+    "emotions": {
+        "base_emotions": {
+            "sadness": {
+                "keywords": ["buồn", "chán", "tuyệt vọng"],
+                "intensity_levels": {
+                    "low": ["hơi buồn", "không vui"],
+                    "medium": ["buồn", "chán nản"],
+                    "high": ["rất buồn", "tuyệt vọng"]
+                },
+                "triggers": ["bị mắng", "thất bại", "chia tay"]
+            },
+            "anger": {
+                "keywords": ["giận", "tức", "bực"],
+                "intensity_levels": {
+                    "low": ["khó chịu", "bực mình"],
+                    "medium": ["giận", "tức giận"],
+                    "high": ["rất giận", "phẫn nộ"]
+                },
+                "triggers": ["bị đánh", "bị phản bội", "bị lừa"]
+            }
+        },
+        "emotion_combinations": {
+            "hurt": ["sad", "angry"],
+            "disappointed": ["sad", "surprised"]
+        }
+    }
+}
