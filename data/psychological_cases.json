@@ -1,0 +1,56 @@
+{
+    "version": "1.0",
+    "cases": {
+        "base_elements": {
+            "subject_types": {
+                "age_groups": ["trẻ em", "thanh thiếu niên", "người trưởng thành"],
+                "genders": ["nam", "nữ", "khác"],
+                "occupations": ["học sinh", "sinh viên", "nhân viên", "người đi làm"]
+            },
+            "problem_types": {
+                "relationship_issues": {
+                    "actions": ["bạo lực", "cãi vã", "xung đột"],
+                    "perpetrators": {
+                        "family": ["cha mẹ", "anh chị", "người thân"],
+                        "social": ["bạn bè", "đồng nghiệp", "người yêu"]
+                    }
+                }
+            },
+            "common_symptoms": [
+                "Khó ngủ",
+                "Stress",
+                "Mất tập trung",
+                "Lo âu",
+                "Trầm cảm"
+            ]
+        },
+        "case_templates": [
+            {
+                "case_id": "CS001",
+                "pattern": "{subject} {action} dẫn đến {emotion}",
+                "treatment_approach": {
+                    "immediate_response": [
+                        "Đảm bảo an toàn cho {subject}",
+                        "Tạo không gian an toàn để {subject} chia sẻ",
+                        "Lắng nghe không phán xét"
+                    ],
+                    "long_term_support": [
+                        "Xây dựng mạng lưới hỗ trợ cho {subject}",
+                        "Phát triển kỹ năng tự bảo vệ",
+                        "Tăng cường sự tự tin"
+                    ],
+                    "solutions": [
+                        "Lắng nghe và chia sẻ",
+                        "Tập thể dục",
+                        "Thiền định"
+                    ]
+                },
+                "variations": [
+                    "{subject} gặp vấn đề với {perpetrator}",
+                    "{subject} bị {action} bởi {perpetrator}",
+                    "{subject} cảm thấy {emotion} vì {perpetrator}"
+                ]
+            }
+        ]
+    }
+} 
