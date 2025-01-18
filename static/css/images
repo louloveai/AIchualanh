@@ -1,0 +1,16 @@
+# Trong app.py
+import streamlit as st
+
+# Sử dụng emoji có sẵn
+st.button("Send 📤")
+st.button("Delete 🗑️")
+st.button("Settings ⚙️")
+
+# Icons cho cảm xúc
+"fas fa-smile"          # 😊 Vui vẻ
+"fas fa-sad-tear"       # 😢 Buồn bã
+"fas fa-angry"          # 😠 Tức giận
+"fas fa-heart"          # ❤️ Yêu thích
+"fas fa-comment"        # 💬 Bình luận
+"fas fa-question"       # ❓ Câu hỏi
+"fas fa-exclamation"    # ❗ Cảnh báo
