@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chữa Lành</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #000000;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        .chat-box {
+            height: 400px;
+            background-color: #222222;
+            border-radius: 10px;
+            overflow-y: scroll;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .message-wrapper {
+            display: flex;
+            margin: 10px 0;
+        }
+        .message.user-wrapper {
+            justify-content: flex-end;
+        }
+        .message.bot-wrapper {
+            justify-content: flex-start;
+        }
+        .message.user, .message.bot {
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 70%;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .message.user {
+            background-color: #0084ff;
+            color: white;
+        }
+        .message.bot {
+            background-color: #444444;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .bot-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: white;
+        }
+        textarea, button {
+            width: 100%;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 100px;
+            padding: 10px;
+            background-color: #333333;
+            color: white;
+        }
+        button {
+            height: 40px;
+            background-color: black;
+            color: white;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #emotion-log-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+        }
+        #toggle-emotion-log {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #emotion-log {
+            background-color: #222;
+            color: white;
+            border: 1px solid #555;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: scroll;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chào mừng đến với AI Chữa Lành</h1>
+        </div>
+        <div class="chat-box" id="chat-box">
+            {% for chat in chat_history %}
+                <div class="message-wrapper user-wrapper">
+                    <div class="message user">{{ chat['user'] }}</div>
+                </div>
+                <div class="message-wrapper bot-wrapper">
+                    <div class="message bot">
+                        <img src="{{ url_for('static', filename='logo.png') }}" class="bot-logo" alt="AI Logo">
+                        <span>{{ chat['bot'] }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <textarea id="user-message" placeholder="Nhập tin nhắn của bạn..."></textarea>
+        <button id="send-button">Gửi</button>
+    </div>
+    <div id="emotion-log-container">
+        <button id="toggle-emotion-log">Bộ lưu cảm xúc</button>
+        <div id="emotion-log">
+            <ul>
+                {% for date, emotions in emotion_log.items() %}
+                <li><strong>{{ date }}</strong>: {{ emotions | join(", ") }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const userMessage = document.getElementById("user-message").value;
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatBox = document.getElementById("chat-box");
+                const userDivWrapper = document.createElement("div");
+                userDivWrapper.classList.add("message-wrapper", "user-wrapper");
+                const userDiv = document.createElement("div");
+                userDiv.classList.add("message", "user");
+                userDiv.textContent = userMessage;
+                userDivWrapper.appendChild(userDiv);
+                chatBox.appendChild(userDivWrapper);
+                const botDivWrapper = document.createElement("div");
+                botDivWrapper.classList.add("message-wrapper", "bot-wrapper");
+                const botDiv = document.createElement("div");
+                botDiv.classList.add("message", "bot");
+                const botLogo = document.createElement("img");
+                botLogo.src = "/static/logo.png";
+                botLogo.alt = "AI Logo";
+                botLogo.classList.add("bot-logo");
+                botDiv.appendChild(botLogo);
+                const botText = document.createElement("span");
+                botText.textContent = data.response;
+                botDiv.appendChild(botText);
+                botDivWrapper.appendChild(botDiv);
+                chatBox.appendChild(botDivWrapper);
+                chatBox.scrollTop = chatBox.scrollHeight;
+                document.getElementById("user-message").value = "";
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        document.getElementById("user-message").addEventListener("keypress", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) { 
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+        document.getElementById("toggle-emotion-log").addEventListener("click", function () {
+            const log = document.getElementById("emotion-log");
+            log.style.display = log.style.display === "none" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
