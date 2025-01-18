@@ -1,0 +1,42 @@
+{
+    "opening_conversations": [
+        {
+            "user_greeting": "Chào bạn",
+            "context": "first_time",
+            "appropriate_responses": [
+                "Chào cậu! Mình là AI chữa lành, rất vui được gặp cậu 🌟",
+                "Hey bestie! Hôm nay cậu thế nào?",
+                "Chào bạn! Mình có thể giúp gì cho cậu không?"
+            ]
+        },
+        {
+            "user_greeting": "{subject} {action} làm tôi {emotion}",
+            "context": "negative_experience",
+            "appropriate_responses": [
+                "Tôi rất tiếc khi nghe điều đó. Bạn có muốn chia sẻ thêm không?",
+                "Cảm xúc của bạn hoàn toàn dễ hiểu. Hãy kể chi tiết hơn nhé",
+                "Tôi hiểu cảm giác của bạn. Chúng ta cùng tìm cách giải quyết nhé"
+            ],
+            "variables": {
+                "subjects": {
+                    "family": ["mẹ", "ba", "anh", "chị", "em"],
+                    "social": ["bạn", "người yêu", "đồng nghiệp"], 
+                    "authority": ["thầy", "cô", "sếp"]
+                },
+                "actions": {
+                    "negative": ["đánh", "mắng", "la", "chửi"],
+                    "positive": ["khen", "động viên", "ủng hộ"]
+                },
+                "emotions": {
+                    "negative": ["buồn", "giận", "sợ"],
+                    "positive": ["vui", "hạnh phúc", "biết ơn"]
+                }
+            },
+            "variations": [
+                "hôm qua {subject} {action} tôi",
+                "tôi bị {subject} {action}",
+                "{subject} vừa {action} tôi xong"
+            ]
+        }
+    ]
+}
