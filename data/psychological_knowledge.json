@@ -1,71 +1,106 @@
 {
     "version": "1.0",
-    "knowledge_base": {
-        "base_concepts": {
-            "mental_states": {
-                "stress": {
-                    "definition": "Phản ứng của cơ thể với áp lực",
-                    "types": {
-                        "acute": "Căng thẳng cấp tính - phản ứng ngắn hạn",
-                        "chronic": "Căng thẳng mãn tính - kéo dài"
+    "metadata": {
+        "last_updated": "timestamp",
+        "response_categories": 15,
+        "total_responses": 500
+    },
+    "response_patterns": {
+        "emotional_support": {
+            "sadness": {
+                "severity_levels": {
+                    "low": {
+                        "responses": [
+                            {
+                                "id": "R001",
+                                "text": "...",
+                                "context": "general_sadness",
+                                "approach": "validation",
+                                "follow_up_questions": [...],
+                                "success_indicators": [...]
+                            }
+                        ],
+                        "intervention_techniques": [...],
+                        "contraindications": [...]
                     },
-                    "symptoms": [
-                        "căng thẳng",
-                        "mất ngủ", 
-                        "đau đầu",
-                        "mất tập trung"
-                    ],
-                    "solutions": [
-                        "thư giãn",
-                        "tập thể dục",
-                        "thiền định",
-                        "thực hành thở sâu"
-                    ]
+                    "medium": {...},
+                    "high": {
+                        "requires_professional": true,
+                        "emergency_protocols": [...]
+                    }
                 },
-                "anxiety": {
-                    "definition": "Lo lắng quá mức về tương lai",
-                    "symptoms": [
-                        "lo lắng",
-                        "khó thở",
-                        "tim đập nhanh"
-                    ],
-                    "solutions": [
-                        "hít thở sâu",
-                        "tập mindfulness",
-                        "tư vấn"
-                    ]
+                "progression_patterns": {
+                    "escalation_signs": [...],
+                    "improvement_indicators": [...]
+                },
+                "therapeutic_goals": {
+                    "immediate": [...],
+                    "short_term": [...],
+                    "long_term": [...]
                 }
             }
         },
-        "treatment_approaches": {
-            "cbt": {
-                "name": "Liệu pháp nhận thức hành vi",
-                "description": "Phương pháp điều trị tập trung vào thay đổi suy nghĩ và hành vi",
-                "techniques": [
-                    "nhận diện suy nghĩ",
-                    "thách thức niềm tin",
-                    "thực hành hành vi mới"
-                ],
-                "applications": [
-                    "stress",
-                    "anxiety",
-                    "depression"
-                ]
+        "coping_strategies": {
+            "anxiety": {...},
+            "stress": {...}
+        }
+    },
+    "response_selection_logic": {
+        "priority_rules": [...],
+        "context_matching": {...},
+        "personalization_factors": [...]
+    },
+    "effectiveness_metrics": {
+        "user_feedback": {...},
+        "success_rates": {...},
+        "improvement_tracking": {...}
+    },
+    "emotional_patterns": [
+        {
+            "pattern_id": "EP001",
+            "user_pattern": "{subject} {action} làm tôi {emotion}",
+            "context": "negative_experience",
+            "pattern_recognition": {
+                "syntax_rules": [...],
+                "semantic_analysis": {...},
+                "context_triggers": [...]
             },
-            "mindfulness": {
-                "name": "Thực hành chánh niệm",
-                "description": "Kỹ thuật tập trung vào hiện tại không phán xét",
-                "techniques": [
-                    "thiền hơi thở",
-                    "body scan",
-                    "walking meditation"
-                ],
-                "benefits": [
-                    "giảm stress",
-                    "tăng tập trung",
-                    "cải thiện giấc ngủ"
-                ]
+            "variables": {
+                "subjects": {
+                    "family": {
+                        "members": ["mẹ", "ba", "anh", "chị"],
+                        "relationship_dynamics": {...},
+                        "cultural_factors": [...]
+                    },
+                    "social": {...},
+                    "authority": {...}
+                },
+                "actions": {
+                    "negative": {
+                        "verbal": [...],
+                        "physical": [...],
+                        "psychological": [...]
+                    },
+                    "severity_scale": {
+                        "mild": [...],
+                        "moderate": [...],
+                        "severe": [...]
+                    }
+                },
+                "emotions": {
+                    "primary": {
+                        "categories": [...],
+                        "intensity_indicators": {...}
+                    },
+                    "secondary": {...},
+                    "emotional_chains": [...]
+                }
+            },
+            "response_strategies": {
+                "immediate": {...},
+                "therapeutic": {...},
+                "follow_up": {...}
             }
         }
-    }
-} 
+    ]
+}
