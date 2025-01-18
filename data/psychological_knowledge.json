@@ -1,0 +1,71 @@
+{
+    "version": "1.0",
+    "knowledge_base": {
+        "base_concepts": {
+            "mental_states": {
+                "stress": {
+                    "definition": "Phản ứng của cơ thể với áp lực",
+                    "types": {
+                        "acute": "Căng thẳng cấp tính - phản ứng ngắn hạn",
+                        "chronic": "Căng thẳng mãn tính - kéo dài"
+                    },
+                    "symptoms": [
+                        "căng thẳng",
+                        "mất ngủ", 
+                        "đau đầu",
+                        "mất tập trung"
+                    ],
+                    "solutions": [
+                        "thư giãn",
+                        "tập thể dục",
+                        "thiền định",
+                        "thực hành thở sâu"
+                    ]
+                },
+                "anxiety": {
+                    "definition": "Lo lắng quá mức về tương lai",
+                    "symptoms": [
+                        "lo lắng",
+                        "khó thở",
+                        "tim đập nhanh"
+                    ],
+                    "solutions": [
+                        "hít thở sâu",
+                        "tập mindfulness",
+                        "tư vấn"
+                    ]
+                }
+            }
+        },
+        "treatment_approaches": {
+            "cbt": {
+                "name": "Liệu pháp nhận thức hành vi",
+                "description": "Phương pháp điều trị tập trung vào thay đổi suy nghĩ và hành vi",
+                "techniques": [
+                    "nhận diện suy nghĩ",
+                    "thách thức niềm tin",
+                    "thực hành hành vi mới"
+                ],
+                "applications": [
+                    "stress",
+                    "anxiety",
+                    "depression"
+                ]
+            },
+            "mindfulness": {
+                "name": "Thực hành chánh niệm",
+                "description": "Kỹ thuật tập trung vào hiện tại không phán xét",
+                "techniques": [
+                    "thiền hơi thở",
+                    "body scan",
+                    "walking meditation"
+                ],
+                "benefits": [
+                    "giảm stress",
+                    "tăng tập trung",
+                    "cải thiện giấc ngủ"
+                ]
+            }
+        }
+    }
+} 
