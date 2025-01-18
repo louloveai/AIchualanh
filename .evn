@@ -1,0 +1,4 @@
+# File mẫu - upload cái này lên GitHub
+API_KEY=your_api_key_here
+DATABASE_URL=your_db_url_here
+SECRET_KEY=your_secret_here
