@@ -1,0 +1,28 @@
+{
+    "version": "1.0",
+    "emotional_patterns": [
+        {
+            "user_pattern": "{subject} {action} làm tôi {emotion}",
+            "context": "negative_experience",
+            "appropriate_responses": [
+                "Bị {subject} {action} khiến bạn cảm thấy {emotion}",
+                "Hãy để tôi giúp bạn vượt qua cảm giác {emotion} này",
+                "Tôi hiểu cảm xúc của bạn. Chúng ta cùng tìm cách giải quyết nhé"
+            ],
+            "variables": {
+                "subjects": {
+                    "family": ["mẹ", "ba", "anh", "chị"],
+                    "social": ["bạn", "đồng nghiệp"],
+                    "authority": ["thầy", "cô", "sếp"]
+                },
+                "actions": {
+                    "negative": ["đánh", "mắng", "la", "chửi", "phạt"]
+                },
+                "emotions": {
+                    "primary": ["buồn", "giận", "sợ", "tổn thương"],
+                    "secondary": ["xấu hổ", "tự ti", "bất lực"]
+                }
+            }
+        }
+    ]
+} 
