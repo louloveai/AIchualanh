@@ -1,0 +1,21 @@
+{
+    "version": "1.0",
+    "responses": {
+        "templates": {
+            "empathy": [
+                "Tôi hiểu cảm giác {emotion} khi {subject} {action}",
+                "Bị {subject} {action} thật không dễ dàng"
+            ],
+            "support": [
+                "Bạn muốn chia sẻ thêm về việc {subject} {action} không?",
+                "Để tôi giúp bạn vượt qua cảm giác {emotion} này"
+            ]
+        },
+        "context_rules": {
+            "family_conflict": {
+                "required_elements": ["empathy", "support"],
+                "tone": "gentle"
+            }
+        }
+    }
+} 
