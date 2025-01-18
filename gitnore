@@ -1,0 +1,95 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+.env.bak
+.venv.bak
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+data/raw/*
+data/processed/*
+models/*.pkl
+logs/*
+*.log
+.streamlit/secrets.toml
+
+# Temp files
+*.tmp
+*.temp
+.coverage
+htmlcov/ 
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Documentation
+docs/_build/
+site/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# ML/AI specific
+wandb/
+mlruns/
+tensorboard/
+*.h5
+*.pth
+*.onnx
+
+# Large files & datasets
+*.csv
+*.json
+*.pkl
+*.parquet
+*.zip
+*.tar.gz 

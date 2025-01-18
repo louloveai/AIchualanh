@@ -1,0 +1,28 @@
+import joblib
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+import os
+
+# Load dữ liệu
+data = pd.read_csv("data.csv")
+
+# Kiểm tra dữ liệu
+if 'message' not in data.columns:
+    raise ValueError("File data.csv cần có cột 'message' chứa văn bản!")
+if data['message'].isnull().sum() > 0:
+    raise ValueError("Cột 'message' chứa giá trị trống! Vui lòng làm sạch dữ liệu.")
+if data['message'].dtype != 'object':
+    raise TypeError("Cột 'message' phải là kiểu văn bản (string).")
+
+# Tạo vectorizer và chuyển đổi dữ liệu
+vectorizer = CountVectorizer(max_features=1000, stop_words='english')
+X = vectorizer.fit_transform(data['message'])
+
+# Lưu vectorizer
+if not os.path.exists("models"):
+    os.makedirs("models")
+joblib.dump(vectorizer, "models/vectorizer.pkl")
+print("Vectorizer đã được lưu vào models/vectorizer.pkl.")
+
+# Hiển thị danh sách từ khóa
+print("Danh sách từ khóa được trích xuất:", vectorizer.get_feature_names_out())

@@ -1,0 +1,64 @@
+{
+  "sadness": [
+    {
+      "text": "Tôi hiểu cảm giác buồn bã của bạn. Hãy chia sẻ thêm về điều đang khiến bạn buồn nhé.",
+      "suggestions": ["Thở sâu", "Thiền", "Đi dạo", "Nghe nhạc thư giãn"],
+      "severity_level": "medium",
+      "follow_up": "Bạn đã cảm thấy buồn như vậy bao lâu rồi?"
+    },
+    {
+      "text": "Nỗi buồn là một phần của cuộc sống. Đừng cố gắng chối bỏ nó, hãy để tôi lắng nghe bạn.",
+      "suggestions": ["Viết nhật ký", "Trò chuyện với bạn bè", "Tập thể dục nhẹ nhàng"],
+      "severity_level": "low",
+      "follow_up": "Điều gì có thể giúp bạn cảm thấy tốt hơn lúc này?"
+    }
+  ],
+  "anxiety": [
+    {
+      "text": "Lo lắng là điều bình thường. Chúng ta hãy cùng tìm cách giải quyết vấn đề này.",
+      "suggestions": ["Thực hành thở", "Viết ra điều lo lắng", "Tập thể dục"],
+      "severity_level": "medium",
+      "follow_up": "Điều gì đang khiến bạn lo lắng nhất?"
+    }
+  ],
+  "anger": [
+    {
+      "text": "Tôi hiểu bạn đang rất tức giận. Hãy thử hít thở sâu và chia sẻ với tôi điều gì đã xảy ra.",
+      "suggestions": ["Đếm đến 10", "Hít thở sâu", "Đi bộ", "Viết ra cảm xúc"],
+      "severity_level": "high",
+      "follow_up": "Điều gì khiến bạn cảm thấy tức giận như vậy?"
+    }
+  ],
+  "fear": [
+    {
+      "text": "Nỗi sợ hãi của bạn hoàn toàn có thể hiểu được. Hãy cùng nhau đối mặt với nó.",
+      "suggestions": ["Thực hành thiền", "Viết ra nỗi sợ", "Tìm người tâm sự"],
+      "severity_level": "medium",
+      "follow_up": "Bạn có thể chia sẻ thêm về nỗi sợ của mình không?"
+    }
+  ],
+  "happiness": [
+    {
+      "text": "Thật tuyệt vời khi thấy bạn hạnh phúc! Hãy chia sẻ niềm vui này nhé.",
+      "suggestions": ["Ghi nhật ký", "Chia sẻ với người thân", "Tận hưởng khoảnh khắc"],
+      "severity_level": "positive",
+      "follow_up": "Điều gì đã mang lại niềm vui này cho bạn?"
+    }
+  ],
+  "stress": [
+    {
+      "text": "Căng thẳng có thể ảnh hưởng nhiều đến cuộc sống. Hãy cùng nhau tìm cách giảm stress nhé.",
+      "suggestions": ["Yoga", "Thiền", "Tập thể dục", "Nghỉ ngơi hợp lý"],
+      "severity_level": "high",
+      "follow_up": "Công việc hay cuộc sống đang khiến bạn stress?"
+    }
+  ],
+  "neutral": [
+    {
+      "text": "Bạn đang cảm thấy thế nào? Hãy chia sẻ với tôi nhé.",
+      "suggestions": ["Thư giãn", "Suy ngẫm", "Trò chuyện"],
+      "severity_level": "low",
+      "follow_up": "Bạn muốn chia sẻ điều gì không?"
+    }
+  ]
+}

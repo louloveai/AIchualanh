@@ -1,0 +1,29 @@
+# Core dependencies
+streamlit>=1.24.0
+transformers>=4.30.0
+torch>=2.0.0
+scikit-learn>=1.2.0
+deep-translator>=1.11.0
+joblib>=1.2.0
+pandas>=2.0.0
+numpy>=1.24.0
+sentencepiece>=0.1.99
+protobuf>=4.23.0
+schedule==1.1.0
+plyer==2.0.0
+
+# Database
+sqlalchemy>=2.0.0
+python-dotenv>=1.0.0
+
+# Authentication
+streamlit-authenticator>=0.2.0
+
+# Logging
+logging>=0.5.1.2
+
+# Text processing 
+textblob>=0.17.1
+
+# Flask (for offline application)
+flask>=2.3.0

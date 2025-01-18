@@ -1,0 +1,66 @@
+import os
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
+
+# ====== Đường dẫn file ======
+current_dir = os.path.dirname(os.path.abspath(__file__))
+chat_history_path = os.path.join(current_dir, "chat_history.csv")
+model_path = os.path.join(current_dir, "chatbot_model.pkl")
+vectorizer_path = os.path.join(current_dir, "vectorizer.pkl")
+
+# ====== Tạo file chat_history.csv nếu chưa tồn tại ======
+def initialize_chat_history():
+    if not os.path.exists(chat_history_path):
+        # Tạo file CSV mẫu
+        df = pd.DataFrame(columns=["user_message", "ai_response"])
+        df.to_csv(chat_history_path, index=False)
+        print("Đã tạo file chat_history.csv mới.")
+    else:
+        print("File chat_history.csv đã tồn tại.")
+
+# ====== Lưu tin nhắn vào chat_history.csv ======
+def save_to_chat_history(user_message, ai_response):
+    """
+    Ghi lại tin nhắn người dùng và phản hồi AI vào file chat_history.csv.
+    """
+    if not os.path.exists(chat_history_path):
+        initialize_chat_history()
+    
+    # Đọc file hiện tại
+    chat_history = pd.read_csv(chat_history_path)
+    # Thêm tin nhắn mới
+    new_entry = {"user_message": user_message, "ai_response": ai_response}
+    chat_history = chat_history.append(new_entry, ignore_index=True)
+    # Ghi lại file
+    chat_history.to_csv(chat_history_path, index=False)
+    print("Đã cập nhật chat_history.csv.")
+
+# ====== Tải mô hình và vectorizer ======
+def load_model_and_vectorizer():
+    model = joblib.load(model_path)
+    vectorizer = joblib.load(vectorizer_path)
+    return model, vectorizer
+
+# ====== Chạy mô hình ======
+def test_model():
+    model, vectorizer = load_model_and_vectorizer()
+    
+    while True:
+        user_message = input("Nhập tin nhắn người dùng (gõ 'exit' để thoát): ")
+        if user_message.lower() == "exit":
+            break
+        
+        # Vector hóa tin nhắn
+        vectorized_message = vectorizer.transform([user_message])
+        # Dự đoán phản hồi
+        predicted_response = model.predict(vectorized_message)[0]
+        print(f"AI phản hồi: {predicted_response}")
+        
+        # Lưu vào lịch sử
+        save_to_chat_history(user_message, predicted_response)
+
+# ====== Khởi chạy chương trình ======
+if __name__ == "__main__":
+    initialize_chat_history()
+    test_model()

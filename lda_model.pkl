@@ -1,0 +1,34 @@
+import joblib
+import pandas as pd
+from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.feature_extraction.text import CountVectorizer
+import os
+
+# Load dữ liệu
+data = pd.read_csv("data.csv")
+
+# Kiểm tra dữ liệu
+if 'message' not in data.columns:
+    raise ValueError("File data.csv cần có cột 'message' chứa văn bản!")
+if data['message'].isnull().sum() > 0:
+    raise ValueError("Cột 'message' chứa giá trị trống! Vui lòng kiểm tra lại dữ liệu.")
+if data['message'].dtype != 'object':
+    raise TypeError("Cột 'message' phải là kiểu văn bản (string).")
+
+# Tạo vectorizer và chuyển đổi dữ liệu
+vectorizer = CountVectorizer(max_features=1000, stop_words='english')
+X = vectorizer.fit_transform(data['message'])
+
+# Số lượng chủ đề có thể tùy chỉnh
+n_topics = 10  # Bạn có thể thay đổi số chủ đề tại đây
+
+# Tạo mô hình LDA
+lda = LatentDirichletAllocation(n_components=n_topics, random_state=42)
+lda.fit(X)
+
+# Tạo thư mục nếu chưa tồn tại và lưu mô hình
+if not os.path.exists("models"):
+    os.makedirs("models")
+joblib.dump(lda, "models/lda_model.pkl")
+joblib.dump(vectorizer, "models/vectorizer.pkl")  # Lưu vectorizer
+print("Mô hình LDA và vectorizer đã được lưu vào thư mục models.")

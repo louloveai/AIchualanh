@@ -1,0 +1,6 @@
+message,label,train_or_test
+"Tôi cảm thấy lo lắng và không thể ngủ được",1,train
+"Tôi thấy bình an khi nghe nhạc thiền",1,train
+"Làm thế nào để vượt qua sự căng thẳng trong công việc?",1,train
+"Tôi không muốn làm gì cả, mọi thứ đều vô nghĩa",0,test
+"Làm thế nào để yêu bản thân nhiều hơn?",1,test
