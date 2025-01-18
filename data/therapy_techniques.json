@@ -1,0 +1,15 @@
+{
+    "anxiety_relief": [
+        {
+            "name": "Kỹ thuật thở 4-7-8",
+            "description": "Hít vào 4 giây, giữ 7 giây, thở ra 8 giây",
+            "benefits": ["Giảm lo âu", "Tăng tập trung", "Thư giãn"],
+            "steps": [
+                "Ngồi hoặc nằm thoải mái",
+                "Hít vào qua mũi đếm 4",
+                "Giữ hơi đếm 7",
+                "Thở ra chậm qua miệng đếm 8"
+            ]
+        }
+    ]
+} 
