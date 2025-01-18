@@ -1,0 +1,39 @@
+from transformers import pipeline
+from datetime import datetime
+
+class AdvancedChatModel:
+    def __init__(self):
+        self.model = pipeline("text-generation", 
+                            model="gpt2")
+        
+    def generate_response(self, context):
+        response = self.model(context, 
+                            max_length=100,
+                            temperature=0.7)
+        return response[0]['generated_text']
+
+class ConversationMemory:
+    def __init__(self):
+        self.memory = []
+        
+    def add_to_memory(self, message):
+        self.memory.append({
+            'text': message,
+            'timestamp': datetime.now(),
+            'emotion': detect_emotion(message)
+        })
+        
+    def get_context(self, last_n=5):
+        return self.memory[-last_n:]
+
+class PsychologicalAnalyzer:
+    def analyze_mental_state(self, conversation_history):
+        # Phân tích xu hướng cảm xúc
+        # Đánh giá mức độ stress
+        # Nhận diện các dấu hiệu cần quan tâm
+        pass
+        
+    def generate_recommendations(self, analysis):
+        # Đề xuất giải pháp phù hợp
+        # Cảnh báo nếu cần sự giúp đỡ chuyên môn
+        pass
