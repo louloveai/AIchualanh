@@ -1,0 +1,21 @@
+{
+    "version": "1.0",
+    "dialogues": {
+        "templates": {
+            "opening": [
+                "Chào bạn, tôi có thể giúp gì không?",
+                "Bạn đang cảm thấy thế nào?"
+            ],
+            "response": {
+                "to_negative": [
+                    "Tôi hiểu điều đó khó khăn với bạn",
+                    "Hãy chia sẻ thêm về cảm xúc của bạn"
+                ],
+                "to_positive": [
+                    "Thật tuyệt khi nghe điều đó",
+                    "Bạn đã làm rất tốt"
+                ]
+            }
+        }
+    }
+} 
