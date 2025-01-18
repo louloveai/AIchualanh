@@ -1,0 +1,52 @@
+{
+    "version": "1.0",
+    "metadata": {
+        "created_at": "2024-01-20T00:00:00Z",
+        "last_updated": "2024-01-20T00:00:00Z",
+        "total_samples": 5000
+    },
+    "training_samples": [
+        {
+            "sample_id": "TS1001",
+            "input": {
+                "text": "Tôi cảm thấy rất căng thẳng về kỳ thi sắp tới",
+                "context": "academic_stress",
+                "timestamp": "2024-01-20T10:30:00Z",
+                "language": "vi"
+            },
+            "analysis": {
+                "emotion_detection": {
+                    "primary_emotion": "anxiety",
+                    "intensity": 0.8,
+                    "related_emotions": ["fear", "worry"]
+                },
+                "intent_classification": {
+                    "primary_intent": "seeking_support",
+                    "confidence": 0.95
+                },
+                "key_phrases": [
+                    "căng thẳng",
+                    "kỳ thi"
+                ]
+            },
+            "response": {
+                "text": "Tôi hiểu việc kỳ thi sắp tới khiến bạn căng thẳng...",
+                "approach": "empathetic_listening",
+                "therapeutic_elements": [
+                    "validation",
+                    "normalization"
+                ]
+            },
+            "effectiveness_metrics": {
+                "user_feedback": 4.5,
+                "engagement_level": 0.9,
+                "resolution_rate": 0.8
+            }
+        }
+    ],
+    "validation_metrics": {
+        "accuracy": 0.92,
+        "f1_score": 0.89,
+        "confusion_matrix": [...]
+    }
+} 

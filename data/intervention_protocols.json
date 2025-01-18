@@ -1,0 +1,51 @@
+{
+    "version": "1.0",
+    "metadata": {
+        "created_at": "2024-01-20T00:00:00Z",
+        "last_updated": "2024-01-20T00:00:00Z",
+        "protocol_count": 50
+    },
+    "protocols": [
+        {
+            "protocol_id": "P1001",
+            "name": "Anxiety Management Protocol",
+            "severity_levels": {
+                "mild": {
+                    "assessment_criteria": [...],
+                    "intervention_steps": [
+                        {
+                            "step": 1,
+                            "action": "Breathing Exercise",
+                            "duration": "5-10 minutes",
+                            "instructions": [...],
+                            "success_indicators": [...]
+                        }
+                    ],
+                    "follow_up": {
+                        "schedule": "weekly",
+                        "evaluation_points": [...]
+                    }
+                },
+                "moderate": {
+                    "requires_professional": false,
+                    "immediate_actions": [...],
+                    "coping_strategies": [...]
+                },
+                "severe": {
+                    "requires_professional": true,
+                    "emergency_procedures": [...],
+                    "referral_process": [...]
+                }
+            },
+            "contraindications": [...],
+            "success_metrics": {
+                "short_term": [...],
+                "long_term": [...]
+            },
+            "adaptation_rules": {
+                "personality_based": {...},
+                "culture_sensitive": {...}
+            }
+        }
+    ]
+} 

@@ -1,0 +1,61 @@
+{
+    "version": "1.0",
+    "metadata": {
+        "created_at": "2024-01-20T00:00:00Z",
+        "last_updated": "2024-01-20T00:00:00Z",
+        "total_profiles": 1000
+    },
+    "profiles": [
+        {
+            "user_id": "U1001",
+            "basic_info": {
+                "age_group": "18-24",
+                "gender": "female",
+                "occupation": "student",
+                "language_preference": "vi"
+            },
+            "psychological_profile": {
+                "personality_traits": {
+                    "openness": 0.8,
+                    "conscientiousness": 0.7,
+                    "extraversion": 0.6,
+                    "agreeableness": 0.75,
+                    "neuroticism": 0.4
+                },
+                "emotional_patterns": {
+                    "common_triggers": ["academic_stress", "social_anxiety"],
+                    "coping_mechanisms": ["music", "exercise"],
+                    "resilience_level": 0.7
+                },
+                "risk_factors": {
+                    "current_level": "low",
+                    "history": ["mild_anxiety"],
+                    "protective_factors": ["strong_family_support"]
+                }
+            },
+            "interaction_history": {
+                "session_count": 15,
+                "common_topics": ["stress_management", "self_improvement"],
+                "response_preferences": {
+                    "communication_style": "empathetic",
+                    "preferred_approaches": ["CBT", "mindfulness"]
+                },
+                "progress_metrics": {
+                    "emotional_stability": 0.8,
+                    "coping_skills": 0.7,
+                    "engagement_level": 0.9
+                }
+            },
+            "support_network": {
+                "professional_care": {
+                    "has_therapist": false,
+                    "emergency_contacts": []
+                },
+                "social_support": {
+                    "family_involvement": "high",
+                    "friend_support": "medium"
+                }
+            }
+        }
+    ]
+} 
